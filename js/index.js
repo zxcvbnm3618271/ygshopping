@@ -1,6 +1,12 @@
 
 
 $(function () {
+    if($.session.get('username')==true)
+    {
+        $(".login_session").textContent=$.session.get('username');
+    }
+
+
     $(".my-order").mouseover(function () {
         $(this).addClass("hover");
     })
