@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="js/jquery-1.10.1.min.js"></script>
+   <script src="js/swiper-3.4.2.jquery.min.js"></script>
+    <style>
+        .swiper-container{
+            height:400px;
+            width:400px;
+            border:1px solid #000;
+        }
+    </style>
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+</head>
+<body>
+<!-- Swiper -->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+        <div class="swiper-slide">Slide 10</div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+</div>
+</body>
+</html>
+
+<script>
+
+    window.onload=function(){
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                loop: true,
+                pagination : '.swiper-pagination',
+                autoplay: 1000,//可选选项，自动滑动
+            },
+        });
+    }
+</script>

@@ -1,7 +1,7 @@
 label.error{
     color: red;
     position: absolute;
-    left: -75px;
+    left: -90px;
     height: 0;
 }
 .public-head-layout .nc-login-now {
@@ -21,13 +21,12 @@ a {
     color: #06C;
 }
 .nc-register-bg {
-    background: #FAFAFA url(../img/register_bg.png) repeat 50% 50%;
+    background: #FAFAFA url(../images/register_bg.png) repeat 50% 50%;
     width: 100%;
     height: 680px;
     overflow: hidden;
 }
 .nc-register-box {
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#26000000', endColorstr='#26000000');
     background: rgba(0,0,0,0.15);
     width: 860px;
     height: 560px;

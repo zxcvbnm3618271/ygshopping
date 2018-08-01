@@ -9,7 +9,12 @@ body {
 
 
 }
-
+label.error{
+    color: red;
+    position: absolute;
+    left: -90px;
+    height: 0;
+}
 .header-wrap {
     width: 99%;
     height: 80px;

@@ -1,5 +1,43 @@
-
+$.validator.setDefaults({
+    submitHandler: function() {
+        alert("提交事件!");
+    }
+});
 $(function () {
+
+
+    $("#loginForm").validate(
+        {
+            rules:{
+                loginName:{
+                    required:true,
+                    minlength:6,
+                    maxlength:20
+                },
+                memberPwd:{
+                    required:true,
+                    minlength:6,
+                    maxlength:20
+                }
+
+            },
+            messages:{
+                loginName:{
+                    required:"这个是必选项",
+                    minlength:"不能低于6字符",
+                    maxlength:"不能高于20字符"
+                },
+                memberPwd:{
+                    required:"这个是必选项",
+                    minlength:"不能低于6字符",
+                    maxlength:"不能高于20字符"
+                }
+
+            },
+
+        }
+    );
+
    $(".tabs-nav").children().click(function () {
            $(this).children("a").addClass("tabulous_active");
            $(this).siblings("li").children("a").removeClass("tabulous_active");
@@ -40,13 +78,23 @@ $(function () {
     })
     $("#loginSubmit").click(function () {
         $.ajax({
-            url:"http://localhost/ygshopping_fb/login.php",
+            url:"http://10.41.154.100/ygshopping_fb/server/login.php",
             data:$("#loginForm").serialize(),
             type:"POST",
             dataType:"json",
+            xhrFields:{
+                withCredentials:true
+            },
             success:function (data) {
+                $.session.set('uaername',data.username);
+                $.session.set('admin',data.admin);
+                alert(data.msg);
+                if(data.status==1)
+                {
+                    window.location='http://10.41.154.100/ygshopping_fb/index.html';
+                }
 
-                alert(data.msg+data.username);
+
 
             }
         });

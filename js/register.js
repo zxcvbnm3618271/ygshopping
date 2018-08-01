@@ -1,6 +1,6 @@
 $.validator.setDefaults({
     submitHandler: function() {
-        $.post("register.php",$("#registerForm").serialize(),function(){
+        $.post("http://10.41.154.100/ygshopping_fb/server/register.php",$("#registerForm").serialize(),function(){
 
         })
 
@@ -8,6 +8,10 @@ $.validator.setDefaults({
     }
 });
 $().ready(function() {
+    $.validator.addMethod("isEmail",function(val){
+         return /\w+@\w+\.\w+/.test(val);
+    },"*邮箱不合法");
+
     $("#registerForm").validate(
         {
             rules:{
@@ -16,7 +20,7 @@ $().ready(function() {
                     minlength:6,
                     maxlength:20,
                     remote:{
-                        url:"http://localhost/ygshopping_fb/checkUser.php",
+                        url:"http://10.41.154.100/ygshopping_fb/server/checkUser.php",
                         type:"post"
                     }
                 },
@@ -30,27 +34,30 @@ $().ready(function() {
                     minlength:6,
                     maxlength:20,
                     equalTo:"#memberPwd"
+                },
+                email:{
+                    isEmail:true
                 }
 
 
             },
             messages:{
                 memberName:{
-                    required:"这个是必选项",
-                    minlength:"不能低于6字符",
-                    maxlength:"不能高于20字符",
-                    remote:"账号已存在"
+                    required:"*这个是必选项",
+                    minlength:"*不能低于6字符",
+                    maxlength:"*不能高于20字符",
+                    remote:"*账号已存在"
                 },
                 memberPwd:{
-                    required:"这个是必选项",
-                    minlength:"不能低于6字符",
-                    maxlength:"不能高于20字符"
+                    required:"*这个是必选项",
+                    minlength:"*不能低于6字符",
+                    maxlength:"*不能高于20字符"
                 },
                 repeatMemberPwd:{
-                    required:"这个是必选项",
-                    minlength:"不能低于6字符",
-                    maxlength:"不能高于20字符",
-                    equalTo:"两次密码不一致"
+                    required:"*这个是必选项",
+                    minlength:"*不能低于6字符",
+                    maxlength:"*不能高于20字符",
+                    equalTo:"*两次密码不一致"
                 }
             },
 
@@ -92,7 +99,7 @@ $().ready(function() {
 
     $("#registerSubmit").click(function () {
         $.ajax({
-            url:"http://localhost/ygshopping_fb/register.php",
+            url:"http://10.41.154.100/ygshopping_fb/server/register.php",
             data:$("#registerForm").serialize(),
             type:"POST",
             dataType:"json",

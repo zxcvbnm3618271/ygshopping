@@ -9,6 +9,7 @@
 
 include "config.php";
 
+session_start();
 if($_SERVER["REQUEST_METHOD"]!="POST")
 {
     exit("非法访问");
@@ -24,12 +25,12 @@ $result = $stmt->get_result();
 $result2=mysqli_fetch_row($result);
 $admin=$result2[0];
 if($result->num_rows>=1){
-    session_start();
+
    $_SESSION['username'] = $username;
    $_SESSION['admin'] = $admin;
  //   echo $username,' 欢迎你！进入 <a href="login.html">用户中心</a><br />';
    // echo '点击此处 <a href="login.php?action=logout">注销</a> 登录！<br />';
-    print_r(json_encode(array("status"=>1,"msg"=>"登录成功","username"=>$_SESSION['username'])));
+    print_r(json_encode(array("status"=>1,"msg"=>"登录成功","username"=>$_SESSION['username'],"admin"=>$_SESSION['admin'])));
    exit;
 }else{
 //   exit('登录失败！点击此处 <a href="javascript:history.back(-1);">返回</a> 重试');

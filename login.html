@@ -13,79 +13,21 @@
     <link rel="stylesheet" href="css/login.css">
 
 
-    <script>
-        $.validator.setDefaults({
-            submitHandler: function() {
-                alert("提交事件!");
-            }
-        });
-        $().ready(function() {
-            $("#commentForm").validate(
-                {
-                    rules:{
-                        name:{
-                            required:true,
-                            minlength:2,
-                            maxlength:16
-                        },
-                        upwd:{
-                            required:true,
-                            minlength:6,
-                            maxlength:16
-                        },
-                        upwd2:{
-                            required:true,
-                            minlength:6,
-                            maxlength:16,
-                            equalTo:"#upwd"
-                        }
-
-
-                    },
-                    messages:{
-                        name:{
-                            required:"这个是必选项",
-                            minlength:"不能低于2字符",
-                            maxlength:"不能高于16字符"
-                        },
-                        upwd:{
-                            required:"这个是必选项",
-                            minlength:"不能低于6字符",
-                            maxlength:"不能高于16字符"
-                        },
-                        upwd2:{
-                            required:"这个是必选项",
-                            minlength:"不能低于6字符",
-                            maxlength:"不能高于16字符",
-                            equalTo:"两次密码不一致"
-                        }
-                    },
-
-                }
-            );
-        });
-    </script>
-
-    <style type="text/css">
-        label.error{
-            color: red;
-        }
-    </style>
 </head>
 <body>
 <div class="header-wrap">
     <header class="public-head-layout wrapper">
-        <h1 class="site-logo"><a href="https://www.cnrmall.com/"><img src="https://pic1.cnrmall.com/image/df/e5/dfe5c0db500c119e8d570142f184ee2d.png" alt=""></a></h1>
+        <h1 class="site-logo"><a href="https://www.cnrmall.com/"><img src="images/yangguangshopping.png" alt=""></a></h1>
         <div class="nc-regist-now">
       <span class="avatar">
-          <img src="https://static.cnrmall.com/public/img/avatar.gif">
+          <img src="images/avatar.gif">
       </span>
-            <span class="register">您好，欢迎来到央广购物<br>已注册的会员请登录，或立即<a title="" href="https://www.cnrmall.com/register" class="register">注册新会员</a></span>
+            <span class="register">您好，欢迎来到央广购物<br>已注册的会员请登录，或立即<a title="" href="register.html" class="register">注册新会员</a></span>
         </div>
     </header>
 </div>
 <div class="nc-login-layout">
-    <div class="left-pic"><img src="https://static.cnrmall.com/public/img/login_img.jpg"></div>
+    <div class="left-pic"><img src="images/login_img.jpg"></div>
     <div class="nc-login">
         <div class="arrow"></div>
         <div id="loginModule" class="nc-login-mode">
@@ -129,7 +71,7 @@
                     </form>
                 </div>
                 <div id="mobileModule" class="tabs-content hideleft" style="display: none; position: absolute; top: 0px;">
-                    <form id="mobileForm" class="nc-login-form" name="mobileForm" method="post" action="login.php">
+                    <form id="mobileForm" class="nc-login-form" name="mobileForm" method="post" action="server/login.php">
                         <dl>
                             <dt>手机号：</dt>
                             <dd>
@@ -167,28 +109,17 @@
 </div>
 <div id="footer">
     <div class="wrapper">
-        <p><a href="https://www.cnrmall.com/">首页</a>
-            | <a target="_blank" href="https://web.cnrmall.com/article/list/199093">招商合作</a>           | <a target="_blank" href="https://web.cnrmall.com/article/info/22">关于央广购物</a>           | <a target="_blank" href="https://web.cnrmall.com/article/info/175304">联系我们</a>           | <a target="_blank" href="http://scm.cnrmall.com/veninfo/venlogin/index.jsp">成为供应商</a>           | <a target="_blank" href="https://web.cnrmall.com/article/info/532349">招贤纳士</a>
+        <p><a href="index.html">首页</a>
+            | <a target="_blank" href="#">招商合作</a>           | <a target="_blank" href="#">关于央广购物</a>           | <a target="_blank" href="#">联系我们</a>           | <a target="_blank" href="#">成为供应商</a>           | <a target="_blank" href="#">招贤纳士</a>
         </p>
-        <p><i></i>京公网安备：11011502002190&nbsp;&nbsp;<a target="_blank" href="javascript:;">京ICP备10038858号</a>&nbsp;&nbsp;<a target="_blank" href="javascript:;">食品流通许可证编号：SP1101151210063489</a>&nbsp;&nbsp;<a target="_blank" href="javascript:;">信息网络传播视听节目许可证 0102002号</a></p>
+        <p><i></i>京公网安备：11011502002190&nbsp;&nbsp;<a target="_blank" href="#">京ICP备10038858号</a>&nbsp;&nbsp;<a target="_blank" href="#">食品流通许可证编号：SP1101151210063489</a>&nbsp;&nbsp;<a target="_blank" href="#">信息网络传播视听节目许可证 0102002号</a></p>
         <p>Copyright<em style="font-family:Arial,Verdana; margin:0 4px">©</em>2010-2017 cnrmall.com All Rights Reserved&nbsp;&nbsp;&nbsp;&nbsp;服务热线：4008-518-518</p>
-        <!-- Copyright © 2016 央广购物,All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;京ICP备10038858号 京公网安备：11011502002190 服务热线：4008-518-518<br />
-        Powered by <a href="http://www.shopnc.net" target="_blank" style="font-weight: 600;"><font style="color:blue;">Shop</font><font style="color:orange;">NC</font>.net</a><br /> -->
-        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260731735'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/q_stat.php%3Fid%3D1260731735' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1260731735"></span><script src=" https://w.cnzz.com/q_stat.php?id=1260731735" type="text/javascript"></script>
-
-        <script>
-            var _hmt = _hmt || [];
-            (function() {
-                var hm = document.createElement("script");
-                hm.src = "https://hm.baidu.com/hm.js?905123a113c36971dd79389429636f4c";
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(hm, s);
-            })();
-        </script>
         <ul class="footer-img">
-            <li><a class="img01" href="javascript:;"></a></li>
-            <li><script src="https://kxlogo.knet.cn/seallogo.dll?sn=e16110811011565130ecka000000&amp;size=0"></script><span style="display:inline-block;position:relative;width:auto;"><a href="https://ss.knet.cn/verifyseal.dll?sn=e16110811011565130ecka000000&amp;ct=df&amp;a=1&amp;pa=0.3410673443467782" id="kx_verify" tabindex="-1" target="_blank" kx_type="图标式" style="display:inline-block;"><img src="https://ss.knet.cn/static/images/logo/cnnic_en.png" style="border:none;" oncontextmenu="return false;" alt="可信网站"></a></span></li>
-            <li><a id="___szfw_logo___" href="https://credit.szfw.org/CX63030000051620161107.html" target="_blank"><img src="http://icon.szfw.org/cert.png" border="0"></a></li>
+            <li><a class="img01" href="#"></a></li>
+            <li><script src="https://kxlogo.knet.cn/seallogo.dll?sn=e16110811011565130ecka000000&amp;size=0"></script>
+                <span style="display:inline-block;position:relative;width:auto;"><a href="https://ss.knet.cn/verifyseal.dll?sn=e16110811011565130ecka000000&amp;ct=df&amp;a=1&amp;pa=0.5959701899917165" id="kx_verify" tabindex="-1" target="_blank" kx_type="图标式" style="display:inline-block;">
+                    <img src="images/cnnic_en.png" style="border:none;" oncontextmenu="return false;" alt="可信网站"></a></span></li>
+            <li><a id="___szfw_logo___" href="https://credit.szfw.org/CX63030000051620161107.html" target="_blank"><img src="images/cert.png" border="0"></a></li>
             <li><a class="img05" href="http://www.bj.cyberpolice.cn/index.do" target="_blank"></a></li>
         </ul>
     </div>

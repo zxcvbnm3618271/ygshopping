@@ -308,7 +308,7 @@ i[class*="fa"] {
 
     font-size: 14px;
     margin-right: 4px;
-    vertical-align: middle;
+    /*vertical-align: middle;*/
 
 }
 .fa {
@@ -632,12 +632,7 @@ input[type="text"], input[type="password"], input.text, input.password {
     color: #999;
 
 }
-.fa-angle-right::before {
 
-    content: "\f105";
-    font-family: FontAwesome;
-
-}
 .head-user-menu dl.my-mall dd {
 
     width: 250px;
@@ -963,7 +958,7 @@ input[type="text"], input[type="password"], input.text, input.password {
 }
 .public-nav-layout .all-category .category {
 
-    display: block !important;
+    display: block ;
 
 }
 .all-category .category {
@@ -2540,7 +2535,7 @@ a:hover{
     100%{transform: translate3d(-339px, 0px, 0px)}
 }
 ul.slider-main{
-animation: slider-main_change 8s 0s infinite;
+/*animation: slider-main_change 8s 0s infinite;*/
 }
 ul.slider-main:hover{
     animation-play-state:paused;
@@ -2861,11 +2856,11 @@ ul.slider-main:hover{
 .bx-wrapper .bx-prev {
     left: 0;
     left: 50% !important;
-    margin-left: -428px;
+    margin-left: -600px;
 }
 .bx-wrapper .bx-next {
     right: 50% !important;
-    margin-right: -355px;
+    margin-right: -600px;
 }
 .side-navigation .line-clear {
     background: #f2f2f2;
@@ -3259,7 +3254,13 @@ ul.slider-main:hover{
 #footer .footer-img li:last-child {
     margin-right: 0px;
 }
-
+.head-user-menu dl:hover dd{
+    display: block;
+}
+.floor-t2 .main-side .bx-wrapper .bx-next {
+    right: 50% !important;
+    margin-right: -220px;
+}
 
 
 

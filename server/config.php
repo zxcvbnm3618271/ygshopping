@@ -7,6 +7,7 @@
  */
 header("Access-Control-Allow-Origin:*");
 header("Content-Type:text/html;charset=utf-8");
+header('Access-Control-Allow-Methods:GET, POST, OPTIONS');
 $dbHostName='127.0.0.1';
 $dbUser='root';
 $dbPwd='';
